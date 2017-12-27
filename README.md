@@ -1,7 +1,20 @@
-# Unscented Kalman Filter Project Starter Code
-Self-Driving Car Engineer Nanodegree Program
+# Extended Kalman Filter implementation in C++
 
-In this project utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
+In this project utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
+
+This is the C++ code to implement extended kalman filter.
+1. main.cpp file is to communicates with the Term 2 Simulator receiving data measurements, calls a function to run the Kalman filter, calls a function to calculate RMSE. It reads in the data and sends a sensor measurement to FusionEKF.cpp. 
+2. ukf.cpp file is to initializes the filter, calls the predict function, calls the update function.It takes the sensor data and initializes variables and updates variables. ukf.cpp uses measurement noise provided by the manufacturer for both lidar and radar. The process noise is a variable which has been tuned to achieve the required rmse values. 
+3. tools.cpp is to function to calculate RMSE.
+
+The final RMSE for dataset 1 is [0.0686, 0.0826, 0.3365, 0.2184]. See figure below in the simulator
+
+  <img width="632" alt="screen shot 2017-11-16 at 2 09 29 pm" src="https://user-images.githubusercontent.com/22051168/32910667-df2983d8-cad7-11e7-9df5-2af73d473e27.png">
+
+
+The final RMSE for dataset 2 is [0.0698, 0.0697, 0.6198, 0.2756]. See figure below in the simulator
+
+  <img width="633" alt="screen shot 2017-11-16 at 2 09 13 pm" src="https://user-images.githubusercontent.com/22051168/32910676-e718646a-cad7-11e7-9014-c3474435c827.png">
 
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
